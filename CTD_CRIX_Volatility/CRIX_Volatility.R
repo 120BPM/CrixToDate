@@ -1,5 +1,10 @@
 # Graph CRIX components
 # volatility of logreturns of CRIX (monthly aggregated standard deviation)
+require(jsonlite)
+require(curl)
+json_file <- "http://crix.hu-berlin.de/data/crix.json"
+crix <- fromJSON(json_file)
+crix$date <- as.Date(crix$date)
 
 require(zoo)
 #getting returns
